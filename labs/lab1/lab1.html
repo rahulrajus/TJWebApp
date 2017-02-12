@@ -1,4 +1,271 @@
 <!DOCTYPE html>
-<html>
-hi
+<html lang="en">
+<head onunload="">
+  <title>Web App Course Submission</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ok">
+  <link href="css/hover-min.css?ok" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css?ok">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script>
+  $(document).ready(function() {
+    var bef;
+    $('[class^=btn]').hover(function() {
+      bef = $(this).html();
+      $(this).html($(this).attr("data-hover"));
+    }, function() {
+      $(this).html(bef);
+
+    });
+  });
+</script>
+   </script>
+
+
+</head>
+<body>
+
+<div class="fadee container-fluid" id="main">
+  <div class="row">
+
+    <div class="col-sm-2">
+    </div>
+
+    <div class="col-sm-8">
+      <h1 class="text-center">First Semester of Junior Year</h1>
+    </div>
+
+    <div class="col-sm-2">
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+      <h2 class ="text-center">My Schedule</p>
+    </div>
+    <div class="col-sm-4">
+    </div>
+    </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="center-block bottom">
+        <!-- <div><a href="labs/lab1/lab1.html" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb1" role="button">Period 1</a></div> -->
+        <button type="button" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb1">Period 1</button>
+        <button type="button" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb2">Period 2</button>
+        <button type="button" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb3">Period 3</button>
+        <button type="button" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb4">Period 4</button>
+        <button type="button" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb5">Period 5</button>
+        <button type="button" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb6">Period 6</button>
+        <button type="button" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb7">Period 7</button>
+        <!-- <div><a href="labs/lab1/lab1.html" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb2" role="button">Period 2</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb3" role="button">Period 3</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb4" role="button">Period 4</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb5" role="button">Period 5</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb6" role="button">Period 6</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-primary hvr-sweep-to-bottom btn-block center-block bb7" role="button">Period 7</a></div> -->
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="center-block bottom">
+        <div><a href="labs/lab1/lab1.html" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb11" data-toggle="modal" data-target="#Calc" data-active="HI" data-hover="Carey" role="button">BC Calculus</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb22" data-toggle="modal" data-target="#APPhys" data-active="HI" data-hover="Forbes" role="button">AP Physics C</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb33" data-toggle="modal" data-target="#English" data-active="HI" data-hover="Miller" role="button">English 11</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb44" data-toggle="modal" data-target="#APUSH" data-active="HI" data-hover="Sheptyck" role="button">AP US History</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb55" data-toggle="modal" data-target="#AI" data-active="HI" data-hover="White" role="button">Artificial Intelligence</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb66" data-toggle="modal" data-target="#Robo" data-active="HI" data-hover="DelaCuesta" role="button">Robotics I</a></div>
+        <div><a href="labs/lab1/lab1.html" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb77" data-toggle="modal" data-target="#CompVis" data-active="HI" data-hover="Zacharias" role="button">Computer Vision</a></div>
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+  <div id="Calc" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Mr. Carey</h4>
+      </div>
+      <div class="modal-body">
+        <center>
+        <img src="https://www.tjhsst.edu/staff-pics/math/IsaacCarey.jpg" alt="Mr. Carey">
+      </center>
+      </div>
+      <div class="modal-body">
+        <a href="https://fcps.tjhsst.edu/coursemgmt/static/pos/300/317704.pdf" class="btn btn-info hvr-sweep-to-bottom btn-block center-block" data-active="HI" data-hover="Program of Studies" role="button">POS</a>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="APPhys" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Mr. Forbes</h4>
+    </div>
+    <div class="modal-body">
+      <center>
+      <img src="https://tjhsst.edu/staff-pics/tech/DuncanForbes.jpg" alt="Mr. Forbes">
+    </center>
+    </div>
+    <div class="modal-body">
+      <a href="https://fcps.tjhsst.edu/coursemgmt/static/pos/300/457004.pdf" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb22" data-active="HI" data-hover="Program of Studies" role="button">POS</a>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div id="English" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Mr. Miller</h4>
+    </div>
+    <div class="modal-body">
+      <center>
+      <img src="https://tjhsst.edu/staff-pics/humanities/MikeMiller.jpg" alt="Mr. Miller">
+    </center>
+    </div>
+    <div class="modal-body">
+      <a href="https://fcps.tjhsst.edu/coursemgmt/static/pos/300/1150T1.pdf" class="btn btn-info hvr-sweep-to-bottom btn-block center-block" data-active="HI" data-hover="Program of Studies" role="button">POS</a>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div id="APUSH" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Mr. Carey</h4>
+    </div>
+    <div class="modal-body">
+      <center>
+      <img src="https://tjhsst.edu/staff-pics/humanities/ElizabethSheptyck.jpg" alt="Ms. Sheptyck">
+    </center>
+    </div>
+    <div class="modal-body">
+      <a href="https://fcps.tjhsst.edu/coursemgmt/static/pos/300/231905.pdf" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb22" data-active="HI" data-hover="Program of Studies" role="button">POS</a>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div id="AI" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Mr. White</h4>
+    </div>
+    <div class="modal-body">
+      <center>
+      Sorry. Image Not Available
+    </center>
+    </div>
+    <div class="modal-body">
+      <a href="https://fcps.tjhsst.edu/coursemgmt/static/pos/300/319966.pdf" class="btn btn-info hvr-sweep-to-bottom btn-block center-block" data-active="HI" data-hover="Program of Studies" role="button">POS</a>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<div id="Robo" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Mr. delaCuesta</h4>
+    </div>
+    <div class="modal-body">
+      <center>
+      <img src="https://tjhsst.edu/staff-pics/tech/CharlesDelaCuesta.jpg" alt="Mr. delaCuesta">
+    </center>
+    </div>
+    <div class="modal-body">
+      <a href="https://fcps.tjhsst.edu/coursemgmt/static/pos/300/9826T8.pdf" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb22" data-active="HI" data-hover="Program of Studies" role="button">POS</a>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
+<div id="CompVis" class="modal fade" role="dialog">
+<div class="modal-dialog">
+
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+      <h4 class="modal-title">Dr. Zacharias</h4>
+    </div>
+    <div class="modal-body">
+      <center>
+      Sorry. Image Not Available
+    </center>
+    </div>
+    <div class="modal-body">
+      <a href="https://fcps.tjhsst.edu/coursemgmt/static/pos/300/317704.pdf" class="btn btn-info hvr-sweep-to-bottom btn-block center-block bb22" data-active="HI" data-hover="Program of Studies" role="button">POS</a>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+
+
+</div>
+
+
+</body>
 </html>
