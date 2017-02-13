@@ -16,7 +16,7 @@ font-size:30px;
 }
 
 /*.bb11:hover span {display:none}*/
-a[class|='bb-']:hover:before {content: attr(data-hover); color:black; }
+a[class|='bb-']:hover:before {content: attr(data-hover); }
 a[class|='bb-']:after {content: attr(data-active); }
 div.bottom {
 margin-bottom: 50px;
@@ -25,6 +25,7 @@ position:absolute
 z:index:100;
 
 }
+
 div.under{
   position:absolute
   margin-bottom: 50px;
