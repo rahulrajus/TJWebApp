@@ -1,4 +1,25 @@
+@keyframes enterButton {
+  from {padding: 0px 0px;
+        font-size: 0px}
+  to {padding: 40px 80px;
+      font-size: 32px}
+}
+@keyframes enterTextField{
+  from {width: 0px;
+        height: 0px;
+        font-size:0px;}
+  to {  width:750px;
+    height: 100px;
+    font-size: 50px;}
+}
+@keyframes enterP{
+  from {
+        font-size:0px;}
+  to {
+    font-size: 100px;}
+}
 div{
+
   font-size: 100px;
   color: white;
 }
@@ -6,12 +27,18 @@ body{
   background-color:  #ff4d4d;
 }
 .main-container{
+
   float: left;
 left: 50%;
 position: relative;
 }
+.enter_animate{
+    animation: enterP 0.5s;
+}
 p{
+
   margin:27px;
+
 }
 .game-box{
   /*top: 0;
@@ -35,6 +62,7 @@ p{
 }
 
 .button {
+   animation: enterButton 0.5s;
     background-color: #ff4d4d; /* Green */
     border: 2px solid white;
 
@@ -53,6 +81,7 @@ p{
 
 }
 #user_input{
+  animation: enterTextField 0.5s;
   width:750px;
   height: 100px;
   font-size: 50px;
