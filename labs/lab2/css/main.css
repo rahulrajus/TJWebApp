@@ -1,0 +1,74 @@
+div{
+  font-size: 100px;
+  color: white;
+}
+body{
+  background-color:  #ff4d4d;
+}
+.main-container{
+  float: left;
+left: 50%;
+position: relative;
+}
+p{
+  margin:27px;
+}
+.game-box{
+  /*top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;*/
+  /*width: 400px;
+  height: auto;*/
+  /*margin-left: auto ;
+  margin-right: auto ;*/
+  /*background-color: #ccc;*/
+  /*white-space: nowrap;
+  text-align: center;*/
+  text-align: center;
+  /*display: inline;
+  display: inline-block;*/
+  position: relative;
+ left: -50%;
+ float: left;
+
+}
+
+.button {
+    background-color: #ff4d4d; /* Green */
+    border: 2px solid white;
+
+    color: white;
+    padding: 40px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    transition: 0.4s;
+}
+.button:hover{
+  /*background-color: #ffe6e6;*/
+  background-color: white;
+  color: #ff4d4d;
+
+}
+#user_input{
+  width:750px;
+  height: 100px;
+  font-size: 50px;
+  text-align: center;
+  color:white;
+  background: transparent;
+  /*padding: 10px;*/
+  padding-bottom: 0px;
+  border: 0;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+outline:none;
+
+}
+#user_input:focus,
+#user_input.focus{
+  border-bottom: solid 2px #969696;
+  outline:none;
+}

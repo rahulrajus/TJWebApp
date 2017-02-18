@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>50 States Game!</title>
+  <script type="text/javascript" src="js/states.json"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<link rel="stylesheet" href="css/main.css?ok">
+</head>
+<body>
+  <div class="main-container">
+
+  <div class="game-box" id="main-box">
+    <p id="state_name">Click "Next" to Play!</p>
+
+
+    Border States:<br>
+    <input type="text" name="statename" id="user_input" ><br>
+    <button class="button" type="button" onclick="generateState()"> Next! </button>
+    <button class="button" type = "button" onclick="verifyStates()"> Submit! </button>
+    <p id="score">0</p>
+  </div>
+</div>
+</body>
+</html>
