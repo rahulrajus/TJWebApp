@@ -12,9 +12,7 @@
   <div class="main-container">
 
   <div class="game-box" id="main-box">
-    <p class="enter_animate" id="state_name">Welcome to the 50 State Game!</p>
-  
-
+    <p class="enter_animate" id="state_name">Welcome to the 50 States Game!</p>
     <!-- <div class= "enter_animate"> Border States? </div><br> -->
     <input class="enter_animate" type="text" name="statename" id="user_input" onkeypress="keyhandle(event)" ><br>
     <script>
@@ -26,9 +24,10 @@
       }
     </script>
     <button class="button" type="button" onclick="newGame()"> New Game! </button>
-    <button class="button" type="button" onclick="generateState()"> Next! </button>
     <button class="button" type = "button" onclick="verifyStates()"> Submit! </button>
-    <p id="score">0</p>
+    <button class="button" type="button" onclick="generateState()"> Skip! </button>
+
+    <p id="score"></p>
   </div>
 </div>
 <div id="footer">
