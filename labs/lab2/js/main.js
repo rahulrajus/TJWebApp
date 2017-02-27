@@ -4,6 +4,7 @@ var ans;
 var lst;
 var score = 0;
 var tries = 3;
+var instruct = true;
 var user_confirm = confirm("This application uses local storage to store user highscores. Please confirm that you are OK with this.")
 if(!(user_confirm) && localStorage.getItem("highscore") != null)
 {
@@ -29,7 +30,29 @@ else {
 var lock = true;
 var questions = 11;
 var gameStarted = false;
+function showInstructions()
+{
+  if(instruct != true)
+  {
+    var elem = document.getElementById('instructions');
+    elem.style.animation =  "fadeEnter 0.3s"
+    elem.style.opacity = 1
+    elem.style.display = ""
 
+  }
+}
+function hideInstructions()
+{
+  if(instruct === true)
+  {
+    var elem = document.getElementById('instructions');
+    elem.style.animation =  "fadeOut 0.3s"
+    elem.style.opacity = 0
+    // elem.style.display = "None"
+
+
+  }
+}
 function verifyStates() {
       // var allStates = JSON.parse(states);
       if(gameStarted)
@@ -118,6 +141,7 @@ function verifyStates() {
         {
           document.getElementById('user_input').value = document.getElementById('user_input').value.replace(lst[j],"").trim();
 
+
         }
       }
     }
@@ -127,6 +151,8 @@ function verifyStates() {
 function newGame(){
   document.getElementById('score').innerHTML = 0;
   document.getElementById('user_input').disabled = false;
+  document.getElementById('user_input').placeholder = "Type in Border States!"
+  //showInstructions();
   score = 0;
   tries = 3;
   questions = 11;
@@ -169,6 +195,18 @@ function newGame(){
   generateState();
 }
 function generateState(){
+  if(questions ===11)
+  {
+    showInstructions();
+    instruct = true;
+  }
+  else {
+    if(instruct)
+    {
+      hideInstructions();
+      instruct = false;
+    }
+  }
   tries = 3;
   if(gameStarted)
   {
@@ -197,7 +235,8 @@ function generateState(){
     {
 
 
-      var rand = parseInt(Math.random()*50 + 1);
+      var rand = parseInt(Math.random()*50);
+
       console.log(rand);
       curr_state = Object.keys(states.usa)[rand];
       lock = false;

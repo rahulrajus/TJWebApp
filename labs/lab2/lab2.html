@@ -14,7 +14,12 @@
   <div class="game-box" id="main-box">
     <p class="enter_animate" id="state_name">Welcome to the 50 States Game!</p>
     <!-- <div class= "enter_animate"> Border States? </div><br> -->
-    <input class="enter_animate" type="text" name="statename" id="user_input" onkeypress="keyhandle(event)" ><br>
+    <input class="enter_animate" type="text" name="statename" id="user_input" onkeypress="keyhandle(event)" placeholder="Start New Game!" >
+    <!-- <div class="helpmegiffick">
+
+    </div> -->
+    <br>
+
     <script>
       function keyhandle(e){
         if(e.keyCode === 13)
@@ -23,12 +28,20 @@
         }
       }
     </script>
+    <div class = "instruct" id="instructions">
+      Type in all of the border states separated by spaces in any order! You will get a hint for every 3 failed attempts. +100 for Correct Answer and -100 for Incorrect Answer
+    </div>
+
     <button class="button" type="button" onclick="newGame()"> New Game! </button>
     <button class="button" type = "button" onclick="verifyStates()"> Submit! </button>
     <button class="button" type="button" onclick="generateState()"> Skip! </button>
 
+
     <p id="score"></p>
   </div>
+  <!-- <div class= "">
+    Welcome to the 50 States Game!
+  </div> -->
 </div>
 <div id="footer">
 
