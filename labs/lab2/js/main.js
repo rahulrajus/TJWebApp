@@ -63,11 +63,6 @@ function verifyStates() {
           var lst = o.split(" ");
           ans = states.usa[curr_state]
           var success = true;
-          console.log(ans);
-          console.log(lst);
-          console.log(lst[0]);
-          console.log("k");
-
           if(ans.length === 0 && ((lst.length === 1 && lst[0] == "") || (lst.length == 1 && lst[0] == "None")))
           {
             success = true;
@@ -182,6 +177,7 @@ function newGame(){
       clearInterval(step);
 
       progress.innerHTML = 10 + " left"
+      generateState();
     }
     else
     {
@@ -190,9 +186,10 @@ function newGame(){
       progress.style.width = (((widthh)/10.0)*100.0) + "%";
     }
   }
+  console.log("done!")
 
 }
-  generateState();
+
 }
 function generateState(){
   if(questions ===11)
