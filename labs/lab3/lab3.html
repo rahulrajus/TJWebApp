@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head onunload="">
+  <title>Web App Course Submission</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ok">
+  <link href="css/hover-min.css?ok" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css?ok">
+  <!-- <script type="text/javascript" src="js/bundle.js"></script> -->
+    <script type="text/javascript" src="js/main.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+   <script>
+   var j = "";
+
+   var k = "";
+   var id = "";
+   var apikey = "cb4e5d1d68e07ee67e05a5833b978550";
+
+  //  identify(new Buffer(bitmap), defaultOptions, function (err, httpResponse, body) {
+  //    if (err) console.log(err);
+  //    console.log(body);
+  //  });
+
+  function callApi(){
+    var inpt = $("#search").val();
+    $.getJSON("http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc",function(json2){
+      k = json2;
+      id = k.message.body.track_list[0].track.track_id + "";
+      $.getJSON("http://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=" + apikey + "&track_id=" + id, function(json) {
+        j = json;
+        // alert(j.message.body.lyrics.lyrics_body)
+        var lines = j.message.body.lyrics.lyrics_body.split("\n")
+        $("#lyrics").html(lines[0] + "<br>");
+        for(var i = 1;i<lines.length;i++)
+        {
+              $("#lyrics").append(lines[i] + "<br>");
+        }
+
+      });
+
+    });
+    console.log(id)
+  }
+   $(document).ready(function() {
+
+      $("#search-button").click(function(){
+        callApi();
+      });
+    });
+
+   </script>
+
+</head>
+<body>
+
+<div class="container-fluid" id="main">
+  <div class="row" style="height:20%">
+    <div class="col-md-6"></div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="row" >
+    <div class="col-md-4 text-center"></div>
+    <div class="col-md-4 text-center">
+        <h1 id="title" style="vertical-align: 50%"> Song Lyrics! </h1>
+        <div class="input-group input-group-lg">
+          <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+
+          <input type="text" class="form-control"  onkeypress="keyhandle(event)" placeholder="Search for a Song!" aria-describedby="sizing-addon1" id="search">
+          <!-- <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1" ></span> -->
+          <span id="sizing-addon1" class="input-group-btn">
+            <button class="btn btn-default" type="button" id="search-button">
+              <span><i class="glyphicon glyphicon-search"></i></span>
+            </button>
+          </span>
+
+        </div>
+    </div>
+    <div class="col-md-4 text-center"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="lyrics"id="lyrics">
+        Type in a song to begin!
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>
+  <!-- <div class="row">
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+    </div>
+    <div class="col-sm-4">
+    </div>
+    </div>
+
+  <div class="row translucent">
+    <div class="col-sm-6">
+      <div class="center-block bottom">
+
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="center-block bottom">
+
+      </div>
+    </div>
+  </div> -->
+
+</div>
+
+
+</body>
+</html>

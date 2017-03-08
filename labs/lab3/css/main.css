@@ -1,0 +1,24 @@
+@keyframes enter{
+  from {
+        font-size:0px;}
+  to {
+    font-size: 100px;}
+}
+body, html, .container-fluid {
+     height: 100%;
+}
+body{
+  background-color: #327BFF;
+}
+#title{
+  color: white;
+}
+#lyrics{
+  color: white;
+  font-size: 30px;
+  margin-top: 50px;
+  overflow: scroll;
+  height: 400px;
+  border:3px solid white;
+  /*width: 500px;*/
+}
