@@ -28,10 +28,10 @@
 
   function callApi(){
     var inpt = $("#search").val();
-    $.getJSON("http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc",function(json2){
+    $.getJSON("https://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc",function(json2){
       k = json2;
       id = k.message.body.track_list[0].track.track_id + "";
-      $.getJSON("http://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=" + apikey + "&track_id=" + id, function(json) {
+      $.getJSON("https://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=" + apikey + "&track_id=" + id, function(json) {
         j = json;
         // alert(j.message.body.lyrics.lyrics_body)
         var lines = j.message.body.lyrics.lyrics_body.split("\n")
