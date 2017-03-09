@@ -45,7 +45,14 @@
     //
     // });
     var inpt = $("#search").val();
-    json_url1 = "http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc";
+    inpts = inpt.split(" ");
+    var query = ""
+    for(var i = 0;i<inpts.length;i++)
+    {
+      query+=inpts[i]
+      query+="%20"
+    }
+    json_url1 = "http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + query + "&page_size=10&page=1&s_track_rating=desc";
     $.ajax({
     method: "GET",
     crossDomain: true,
