@@ -48,7 +48,7 @@
     json_url1 = "http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc";
     $.ajax({
     method: "GET",
-    url: "js/worker.phps",
+    url: "js/worker.php",
     data: { url : json_url1 }
     })
     .done(function( json_contents1 ) {
@@ -59,7 +59,7 @@
 
       $.ajax({
     method: "GET",
-    url: "js/worker.phps",
+    url: "js/worker.php",
     data: { url : json_url2 }
     })
     .done(function( json_contents2 ) {
