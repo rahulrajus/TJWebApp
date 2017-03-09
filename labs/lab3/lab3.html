@@ -27,24 +27,62 @@
   //  });
 
   function callApi(){
+    // var inpt = $("#search").val();
+    // $.getJSON("http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc",function(json2){
+    //   k = json2;
+    //   id = k.message.body.track_list[0].track.track_id + "";
+    //   $.getJSON("http://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=" + apikey + "&track_id=" + id, function(json) {
+    //     j = json;
+    //     // alert(j.message.body.lyrics.lyrics_body)
+    //     var lines = j.message.body.lyrics.lyrics_body.split("\n")
+    //     $("#lyrics").html(lines[0] + "<br>");
+    //     for(var i = 1;i<lines.length;i++)
+    //     {
+    //           $("#lyrics").append(lines[i] + "<br>");
+    //     }
+    //
+    //   });
+    //
+    // });
     var inpt = $("#search").val();
-    $.getJSON("https://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc&callback=?",function(json2){
-      k = json2;
+    json_url1 = "http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc";
+    $.ajax({
+    method: "GET",
+    url: "js/worker.phps",
+    data: { url : json_url1 }
+    })
+    .done(function( json_contents1 ) {
+      console.log( "MESSAGE FROM PHP: " + json_contents1 );
+      k = json_contents1;
       id = k.message.body.track_list[0].track.track_id + "";
-      $.getJSON("https://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=" + apikey + "&track_id=" + id, function(json) {
-        j = json;
-        // alert(j.message.body.lyrics.lyrics_body)
-        var lines = j.message.body.lyrics.lyrics_body.split("\n")
-        $("#lyrics").html(lines[0] + "<br>");
-        for(var i = 1;i<lines.length;i++)
-        {
-              $("#lyrics").append(lines[i] + "<br>");
-        }
+      json_url2 = "http://api.musixmatch.com/ws/1.1/track.lyrics.get?apikey=" + apikey + "&track_id=" + id;
 
-      });
+      $.ajax({
+    method: "GET",
+    url: "js/worker.phps",
+    data: { url : json_url2 }
+    })
+    .done(function( json_contents2 ) {
+      console.log( "MESSAGE FROM PHP: " + json_contents2 );
+      j = json_contents2;
+      // alert(j.message.body.lyrics.lyrics_body)
+      var lines = j.message.body.lyrics.lyrics_body.split("\n")
+      $("#lyrics").html(lines[0] + "<br>");
+      for(var i = 1;i<lines.length;i++)
+      {
+            $("#lyrics").append(lines[i] + "<br>");
+      }
+
+
+    });
+
+
+
+
 
     });
     console.log(id)
+
   }
    $(document).ready(function() {
 
