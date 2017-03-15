@@ -148,7 +148,7 @@
               console.log( "MESSAGE FROM PHP: " + json_contents3 );
               img_url = json_contents3.response.searchResults.searchResult[0].track.release.image;
               // alert(json_contents3.response.searchResults.searchResult[0].track.release.image);
-              $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"max-width:70% max-height:70%\">");
+              $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:100%; height: auto;\">");
 
           }).fail(function(exception)  {
             alert("Sorry. Server unavailable. " + exception);
