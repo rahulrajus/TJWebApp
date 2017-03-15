@@ -97,7 +97,10 @@
       url: "js/worker.php",
       data: {url: dig_url}
     }).done(function(json_contents3){
+        img_url = json_contents3.searchResults.searchResult[0].image;
         alert(json_contents3.searchResults.searchResult[0].image);
+        $("#img").html("<img src=" + img_url +  " class=\"img-responsive\" alt=\"Album Art\">");
+
     });
 
   }
@@ -144,7 +147,7 @@
       </div>
     <div class="col-md-6 text-center">
       <div class="art"id="img">
-      
+
       </div>
 
     </div>
