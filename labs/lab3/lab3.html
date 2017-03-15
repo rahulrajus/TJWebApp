@@ -18,6 +18,7 @@
    var j = "";
 
    var k = "";
+   var l = "":
    var id = "";
    var apikey = "cb4e5d1d68e07ee67e05a5833b978550";
    var sev_key = "7d2nsj7jv994";
@@ -95,6 +96,7 @@
             url: "js/worker.php",
             data: {url: dig_url}
           }).done(function(json_contents3){
+              l = json_contents3
               console.log( "MESSAGE FROM PHP: " + json_contents3 );
               img_url = json_contents3.searchResults.searchResult[0].image;
               alert(json_contents3.searchResults.searchResult[0].image);
