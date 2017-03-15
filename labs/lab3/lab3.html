@@ -19,6 +19,7 @@
 
    var k = "";
    var l = "";
+   var m = "";
    var id = "";
    var apikey = "cb4e5d1d68e07ee67e05a5833b978550";
    var sev_key = "7d2nsj7jv994";
@@ -143,25 +144,29 @@
 
       }).done(function(json_contents3){
           l = JSON.parse(json_contents3);
+          spot_id = l.tracks.items[0].id
+
           // img_url = l.results[0].artworkUrl100;
           // spot_id = l.tracks.items
-          // $.ajax({
-          //   method: "GET",
-          //   crossDomain: true,
-          //   url: "js/worker.php",
-          //   data: {url: it_url}
-          //
-          // }).done(function(json_contents3){
-          //     l = JSON.parse(json_contents3);
-          //     img_url = l.results[0].artworkUrl100;
-          //
-          //
-          //     $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
-          //     $("#player").html("<source src=\"" + url +"\" type=\"audio/mpeg\"")
-          // });
-          //
-          // $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
-          // $("#player").html("<source src=\"" + url +"\" type=\"audio/mpeg\"")
+          spot_track_url = "https://api.spotify.com/v1/tracks/" + spot_id;
+          $.ajax({
+            method: "GET",
+            crossDomain: true,
+            url: "js/worker.php",
+            data: {url: spot_track_url}
+
+
+          }).done(function(json_contents4){
+              m = JSON.parse(json_contents4);
+              img_url = m.images[0].url
+
+
+              $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
+              $("#player").html("<source src=\"" + url +"\" type=\"audio/mpeg\"")
+          });
+
+          $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
+          $("#player").html("<source src=\"" + url +"\" type=\"audio/mpeg\"")
       });
           //dig_url = "http://api.7digital.com/1.2/track/search?q=" + query + "&oauth_consumer_key=" + sev_key + "&country=US&pagesize=2&usageTypes=download,subscriptionstreaming,adsupportedstreaming"
           // console.log(dig_url)
