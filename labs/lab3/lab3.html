@@ -97,6 +97,7 @@
       url: "js/worker.php",
       data: {url: dig_url}
     }).done(function(json_contents3){
+        console.log( "MESSAGE FROM PHP: " + json_contents3 );
         img_url = json_contents3.searchResults.searchResult[0].image;
         alert(json_contents3.searchResults.searchResult[0].image);
         $("#img").html("<img src=" + img_url +  " class=\"img-responsive\" alt=\"Album Art\">");
