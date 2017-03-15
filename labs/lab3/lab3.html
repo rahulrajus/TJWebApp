@@ -161,8 +161,8 @@
               img_url = m.album.images[0].url
               prev_url = m.preview_url
               console.log("prev_url" + prev_url)
-              $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
-              $("#song").html("<audio controls><source src=\"" + prev_url +"\" type=\"audio/mpeg\"></audio>")
+            //  $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
+              $("#song").html("<audio controls><img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\"><source src=\"" + prev_url +"\" type=\"audio/mpeg\"></audio>")
           });
 
       });
