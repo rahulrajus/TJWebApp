@@ -140,6 +140,7 @@
             data: {url: dig_url}
           }).done(function(xml_contents3){
               l = json_contents3
+              var json_contents3 = ""
               json_contents3 = xmlToJson(xml_contents3)
               console.log( "MESSAGE FROM PHP: " + json_contents3 );
               img_url = json_contents3.searchResults.searchResult[0].image;
