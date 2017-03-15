@@ -20,12 +20,12 @@
    var k = "";
    var id = "";
    var apikey = "cb4e5d1d68e07ee67e05a5833b978550";
+   var sev_key = "7d2nsj7jv994";
 
   //  identify(new Buffer(bitmap), defaultOptions, function (err, httpResponse, body) {
   //    if (err) console.log(err);
   //    console.log(body);
   //  });
-
   function callApi(){
     // var inpt = $("#search").val();
     // $.getJSON("http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc",function(json2){
@@ -84,15 +84,21 @@
             $("#lyrics").append(lines[i] + "<br>");
       }
 
-
     });
-
-
-
 
 
     });
     console.log(id)
+    dig_url = "http://api.7digital.com/1.2/track/search?q=" + query + "Happy&oauth_consumer_key=" + sev_key + "&country=US&pagesize=2&usageTypes=download,subscriptionstreaming,adsupportedstreaming"
+    $.ajax({
+      method: "GET",
+      crossDomain: true,
+      dataType: 'json',
+      url: "js/worker.php",
+      data: {url: dig_url}
+    }).done(function(json_contents3){
+        alert(json_contents3.searchResults.searchResult[0].image);
+    });
 
   }
    $(document).ready(function() {
@@ -132,9 +138,13 @@
     <div class="col-md-4 text-center"></div>
   </div>
   <div class="row">
-    <div class="col-md-12 text-center">
+    <div class="col-md-6 text-center">
       <div class="lyrics"id="lyrics">
         Type in a song to begin!
+      </div>
+    <div class="col-md-6 text-center">
+      <div class="art"id="img">
+      
       </div>
 
     </div>
