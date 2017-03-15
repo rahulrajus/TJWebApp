@@ -151,6 +151,22 @@
               // alert(json_contents3.response.searchResults.searchResult[0].track.release.image);
               $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
 
+
+              $.get("http://api.7digital.com/1.2/track/preview",
+              {
+            trackId: json_contents3.response.searchResults.searchResult[0].track["@attributes"].id, // get track id from hidden field next to link in dom
+            redirect: false, // we don't want to be redirected to the file
+            oauth_consumer_key: sev_key
+              })
+              .done(function(xml) {
+                var url = $(xml).find("url").text();
+                $("#player").html("<source src=\"" + url +"\" type=\"audio/mpeg\"")
+                // $("#player").attr("src", url); // set url of song on player
+                // $("#player").get(0).load(); // load song on player
+                // $("#player").get(0).play(); // start player
+              });
+
+
           }).fail(function(exception)  {
             alert("Sorry. Server unavailable. " + exception);
 
@@ -209,6 +225,9 @@
   </div>
   <div class="col-md-6 text-center">
     <div class="art"id="img">
+
+    </div>
+    <div class="song" id="song">
 
     </div>
 
