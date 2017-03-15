@@ -102,7 +102,10 @@
               alert(json_contents3.searchResults.searchResult[0].image);
               $("#img").html("<img src=" + img_url +  " class=\"img-responsive\" alt=\"Album Art\">");
 
-          });
+          }).fail(function()  {
+            alert("Sorry. Server unavailable. ");
+            
+            });
     });
 
 
