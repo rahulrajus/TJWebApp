@@ -146,8 +146,8 @@
               json_contents3 = xmlToJson(xml)
               l = json_contents3
               console.log( "MESSAGE FROM PHP: " + json_contents3 );
-              img_url = json_contents3.response.searchResults.searchResult[0].image;
-              alert(json_contents3.response.searchResults.searchResult[0].image);
+              img_url = json_contents3.response.searchResults.searchResult[0].track.release.image;
+              alert(json_contents3.response.searchResults.searchResult[0].track.release.image);
               $("#img").html("<img src=" + img_url +  " class=\"img-responsive\" alt=\"Album Art\">");
 
           }).fail(function(exception)  {
