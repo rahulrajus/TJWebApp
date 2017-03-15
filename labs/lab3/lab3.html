@@ -139,7 +139,7 @@
         method: "GET",
         crossDomain: true,
         url: "js/worker.php",
-        data: {url: it_url}
+        data: {url: spot_url_search}
 
       }).done(function(json_contents3){
           l = JSON.parse(json_contents3);
@@ -159,7 +159,7 @@
           //     $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
           //     $("#player").html("<source src=\"" + url +"\" type=\"audio/mpeg\"")
           // });
-          // 
+          //
           // $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
           // $("#player").html("<source src=\"" + url +"\" type=\"audio/mpeg\"")
       });
