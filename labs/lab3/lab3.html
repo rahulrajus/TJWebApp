@@ -158,15 +158,13 @@
 
           }).done(function(json_contents4){
               m = JSON.parse(json_contents4);
-              img_url = m.images[0].url
-
+              img_url = m.album.images[0].url
+              prev_url = m.preview_url
 
               $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
-              $("#player").html("<source src=\"" + url +"\" type=\"audio/mpeg\"")
+              $("#player").html("<source src=\"" + prev_url +"\" type=\"audio/mpeg\"")
           });
 
-          $("#img").html("<img src=" + img_url +  "  alt=\"Album Art\" style=\"width:45%; height: auto;\">");
-          $("#player").html("<source src=\"" + url +"\" type=\"audio/mpeg\"")
       });
           //dig_url = "http://api.7digital.com/1.2/track/search?q=" + query + "&oauth_consumer_key=" + sev_key + "&country=US&pagesize=2&usageTypes=download,subscriptionstreaming,adsupportedstreaming"
           // console.log(dig_url)
