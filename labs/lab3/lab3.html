@@ -27,6 +27,48 @@
   //    if (err) console.log(err);
   //    console.log(body);
   //  });
+  function xmlToJson(xml) { //THIS CODE IS USED TO CONVERT XML TO JSON BECAUSE ONE OF THE API I USE PREFERS XML.
+  //I GOT THIS CODE FROM https://gist.github.com/chinchang/8106a82c56ad007e27b1
+
+	// Create the return object
+	var obj = {};
+
+	if (xml.nodeType == 1) { // element
+		// do attributes
+		if (xml.attributes.length > 0) {
+		obj["@attributes"] = {};
+			for (var j = 0; j < xml.attributes.length; j++) {
+				var attribute = xml.attributes.item(j);
+				obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+			}
+		}
+	} else if (xml.nodeType == 3) { // text
+		obj = xml.nodeValue;
+	}
+
+	// do children
+	// If just one text node inside
+	if (xml.hasChildNodes() && xml.childNodes.length === 1 && xml.childNodes[0].nodeType === 3) {
+		obj = xml.childNodes[0].nodeValue;
+	}
+	else if (xml.hasChildNodes()) {
+		for(var i = 0; i < xml.childNodes.length; i++) {
+			var item = xml.childNodes.item(i);
+			var nodeName = item.nodeName;
+			if (typeof(obj[nodeName]) == "undefined") {
+				obj[nodeName] = xmlToJson(item);
+			} else {
+				if (typeof(obj[nodeName].push) == "undefined") {
+					var old = obj[nodeName];
+					obj[nodeName] = [];
+					obj[nodeName].push(old);
+				}
+				obj[nodeName].push(xmlToJson(item));
+			}
+		}
+	}
+	return obj;
+}
   function callApi(){
     // var inpt = $("#search").val();
     // $.getJSON("http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + inpt + "&page_size=10&page=1&s_track_rating=desc",function(json2){
@@ -92,12 +134,13 @@
           $.ajax({
             method: "GET",
             crossDomain: true,
-            dataType: 'application/json',
+            // dataType: 'application/json',
             contentType :   'application/json',
             url: "js/worker.php",
             data: {url: dig_url}
-          }).done(function(json_contents3){
+          }).done(function(xml_contents3){
               l = json_contents3
+              json_contents3 = xmlToJson(xml_contents3)
               console.log( "MESSAGE FROM PHP: " + json_contents3 );
               img_url = json_contents3.searchResults.searchResult[0].image;
               alert(json_contents3.searchResults.searchResult[0].image);
