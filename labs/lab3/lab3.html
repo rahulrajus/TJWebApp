@@ -102,7 +102,14 @@
       query+="%20"
       query2+="%20"
     }
-    json_url1 = "http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + query + "&q_artist=" + query2 + "&page_size=10&page=1&s_track_rating=desc";
+    if(query2 === "")
+    {
+      json_url1 = "http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + query + "&page_size=10&page=1&s_track_rating=desc&quorum_factor=0.5";
+
+    }
+    else{
+    json_url1 = "http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + query + "&q_artist=" + query2 + "&page_size=10&page=1&s_track_rating=desc&quorum_factor=0.5";
+  }
     $.ajax({
     method: "GET",
     crossDomain: true,
