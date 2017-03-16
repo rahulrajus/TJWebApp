@@ -144,7 +144,14 @@
       dig_url = "http://api.7digital.com/1.2/track/search/?q=" + query + "&country=ww&oauth_consumer_key=7d2nsj7jv994";
       // it_query = query.replace("%20","+")
     //  it_url = "https://itunes.apple.com/search?term=" + it_query;
-      spot_url_search = "https://api.spotify.com/v1/search?q=" + query + "&type=track"
+    if(inpt2 === "")
+    {
+    spot_url_search = "https://api.spotify.com/v1/search?q=" + query +  "&type=track"
+    }
+    else {
+      spot_url_search = "https://api.spotify.com/v1/search?q=" + query + "%20artist:" + query2 + "&type=track"
+
+    }
       // $.getJSON(it_url,function(json_contents3){
       //     l = json_contents3
       // });
