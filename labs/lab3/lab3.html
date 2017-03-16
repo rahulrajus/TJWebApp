@@ -227,6 +227,9 @@
       $("#search-button").click(function(){
         callApi();
       });
+      $("#search-a-button").click(function(){
+        callApi();
+      });
     });
 
    </script>
@@ -247,7 +250,7 @@
           <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
 
           <input type="text" class="form-control"  onkeypress="keyhandle(event)" placeholder="Search for a Song!" aria-describedby="sizing-addon1" id="search">
-          <input type="text" class="form-control"  onkeypress="keyhandle(event)" placeholder="Artist Name" aria-describedby="sizing-addon1" id="artist">
+
           <!-- <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1" ></span> -->
           <span id="sizing-addon1" class="input-group-btn">
             <button class="btn btn-default" type="button" id="search-button">
@@ -256,6 +259,20 @@
           </span>
 
         </div>
+        <div class="input-group input-group-lg">
+          <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
+
+          <!-- <input type="text" class="form-control"  onkeypress="keyhandle(event)" placeholder="Search for a Song!" aria-describedby="sizing-addon1" id="search"> -->
+          <input type="text" class="form-control"  onkeypress="keyhandle(event)" placeholder="Artist Name" aria-describedby="sizing-addon1" id="artist">
+          <!-- <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1" ></span> -->
+          <span id="sizing-addon1" class="input-group-btn">
+            <button class="btn btn-default" type="button" id="search-a-button">
+              <span><i class="glyphicon glyphicon-search"></i></span>
+            </button>
+          </span>
+
+        </div>
+
     </div>
     <div class="col-md-4 text-center"></div>
   </div>
