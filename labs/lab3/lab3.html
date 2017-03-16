@@ -90,14 +90,19 @@
     //
     // });
     var inpt = $("#search").val();
+    var inpt2 = $("#artist").val();
     inpts = inpt.split(" ");
+    inpts2 = inpt2.split(" ");
     var query = ""
+    var query2 = ""
     for(var i = 0;i<inpts.length;i++)
     {
       query+=inpts[i]
+      query2+=inpts2[i]
       query+="%20"
+      query2+="%20"
     }
-    json_url1 = "http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + query + "&page_size=10&page=1&s_track_rating=desc";
+    json_url1 = "http://api.musixmatch.com/ws/1.1/track.search?apikey=" + apikey + "&q_track=" + query + "&q_artist=" + query2 + "&page_size=10&page=1&s_track_rating=desc";
     $.ajax({
     method: "GET",
     crossDomain: true,
@@ -242,6 +247,7 @@
           <!-- <span class="input-group-addon" id="basic-addon1">@</span> -->
 
           <input type="text" class="form-control"  onkeypress="keyhandle(event)" placeholder="Search for a Song!" aria-describedby="sizing-addon1" id="search">
+          <input type="text" class="form-control"  onkeypress="keyhandle(event)" placeholder="Artist Name" aria-describedby="sizing-addon1" id="artist">
           <!-- <span class="input-group-addon glyphicon glyphicon-search" id="basic-addon1" ></span> -->
           <span id="sizing-addon1" class="input-group-btn">
             <button class="btn btn-default" type="button" id="search-button">
