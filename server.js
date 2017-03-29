@@ -10,9 +10,9 @@ app.get('/', function (req, res) {
   console.log("served3")
   console.log("served4")
 })
-app.get('/summer.html', function(req,res) {
-  res.sendFile(__dirname + "/summer.html");
-});
+// app.get('/summer.html', function(req,res) {
+//   res.sendFile(__dirname + "/summer.html");
+// });
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')

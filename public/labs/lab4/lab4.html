@@ -1,0 +1,33 @@
+<html>
+<head>
+<script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
+
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCRjqzOlIuVkVM5ES0avAvBPEa3DQHyRcA",
+    authDomain: "webdev-85294.firebaseapp.com",
+    databaseURL: "https://webdev-85294.firebaseio.com/",
+    storageBucket: "webdev-85294.appspot.com",
+    messagingSenderId: "220662033016"
+  };
+  firebase.initializeApp(config);
+  var new_post = firebase.database().ref('posts');
+  new_post.on('value',function(snapshot){
+    console.log(snapshot.val());
+    y = snapshot.val();
+  });
+
+
+</script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<head>
+  <body>
+    <div class="main-container">
+
+    </div>
+
+  </body>
+</html>
