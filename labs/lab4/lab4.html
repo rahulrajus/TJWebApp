@@ -2,7 +2,11 @@
 <head>
 <script src="https://www.gstatic.com/firebasejs/3.7.2/firebase.js"></script>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css?ok">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -14,18 +18,40 @@
   };
   firebase.initializeApp(config);
   var new_post = firebase.database().ref('posts');
-  new_post.on('value',function(snapshot){
-    console.log(snapshot.val());
+  new_post.on('child_added',function(snapshot){
+    console.log("Ok",snapshot.val());
     y = snapshot.val();
+    $("#mc").append(
+      "<div class=\"panel panel-default\">" + "<div class=\"panel-heading\">" + "<h3 class=\"panel-title\">" + y["name"] + "</h3></div>" + "<div class=\"panel-body\">" + y["post"] + "</div></div>"
+    )
   });
 
 
+
+  // var postRef = new_post.push();
+  // postRef.set({"name":"rahul","post":"testing"});
+
+
+
+  // new_post.push({"name":"rahull","post":"testing"})
+
+
+
+
+    // new_post_push = new_post.push().set({"name":"rahull","post":"testing"})
+  // new_post_push.set({"name":"rahull","post":"testing"})
+
+
+  new_post.on("child_changed", function(snapshot) {
+  var changedPost = snapshot.val();
+  console.log("The updated post title is " + changedPost.title);
+  });
+
 </script>
 <script type="text/javascript" src="js/main.js"></script>
-
 <head>
   <body>
-    <div class="main-container">
+    <div class="main-container" id="mc">
 
     </div>
 
