@@ -7,6 +7,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -18,6 +19,13 @@
   };
   firebase.initializeApp(config);
   var new_post = firebase.database().ref('posts');
+  function submit()
+  {
+    var post = document.getElementById("postarea").value
+    var name = document.getElementById("namearea").value
+    new_post.push({"name":name,"post":post})
+    $("#myModal").modal('toggle');
+  }
   new_post.on('child_added',function(snapshot){
     console.log("Ok",snapshot.val());
     y = snapshot.val();
@@ -51,6 +59,30 @@
 <script type="text/javascript" src="js/main.js"></script>
 <head>
   <body>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">New Post!</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Name</h4>
+      <textarea class="form-control" id="namearea" rows="1" id="comment" placeholder="Write your name here!"></textarea>
+      </div>
+      <div class="modal-body">
+        <p>Post</p>
+        <textarea class="form-control" id="postarea" rows="5" id="comment" placeholder="Write your post here!"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" onclick="submit()">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
     <div class="main-container" id="mc">
 
     </div>
