@@ -22,13 +22,12 @@ cnt.on("child_changed", function(snapshot) {
   console.log(snapshot.val())
   console.log("wow",count)
 });
+
 cnt.on("child_added", function(snapshot) {
   count = parseInt(snapshot.val())
   console.log(snapshot.val())
   console.log("wow",count)
 });
-
-
 // require('firebase/database');
 //   var config = {
 //     apiKey: "AIzaSyCRjqzOlIuVkVM5ES0avAvBPEa3DQHyRcA",
@@ -53,10 +52,6 @@ app.get('/', function (req, response) {
   console.log("served2");
   console.log("served3");
   console.log("served4");
-
-
-
-
 
 })
 // app.get('/summer.html', function(req,res) {
