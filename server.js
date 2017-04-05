@@ -31,7 +31,7 @@ app.get('/index', function (req, res) {
 
 app.use("/media",express.static(__dirname + '/media'))
 app.use("/css",express.static(__dirname + '/css'))
-app.use("/html",express.static(__dirname + '/js'))
+// app.use("/html",express.static(__dirname + '/js'))
 app.use("/js",express.static(__dirname + '/js'))
 var admin = require("firebase-admin");
 
