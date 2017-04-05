@@ -1,6 +1,7 @@
 var express = require('express')
 var app = express()
 var nodemon = require('nodemon')
+
 app.use("/labs",express.static(__dirname + '/labs'))
 app.use("/media",express.static(__dirname + '/media'))
 app.use("/css",express.static(__dirname + '/css'))
@@ -27,9 +28,6 @@ app.get('/index', function (req, res) {
 
 
 })
-var express = require('express')
-var app = express()
-var nodemon = require('nodemon')
 
 app.use("/media",express.static(__dirname + '/media'))
 app.use("/css",express.static(__dirname + '/css'))

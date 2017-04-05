@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/slickboy/TJWebApp/issues"
   },
-  "homepage": "https://github.com/slickboy/TJWebApp#readme"
+  "homepage": "https://github.com/slickboy/TJWebApp#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "firebase-admin": "^4.2.0",
+    "nodemon": "^1.11.0"
+  }
 }
